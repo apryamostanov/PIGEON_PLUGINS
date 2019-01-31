@@ -1,0 +1,24 @@
+plugins {
+    id "groovy"
+    id "idea"
+}
+sourceCompatibility = 1.7
+group = "io.infinite"
+version = "1.0.0-SNAPSHOT"
+description = "Pigeon plugins"
+wrapper {
+    gradleVersion = "5.0"
+}
+repositories {
+    jcenter()
+    maven {
+        url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
+    }
+}
+sourceSets {
+    main.groovy.srcDirs = ["src"]
+}
+dependencies {
+    compile "io.infinite:pigeon-lib:1.0.0-20190131.090504-30"
+    compile "org.codehaus.groovy:groovy-all:2.5.4"
+}
