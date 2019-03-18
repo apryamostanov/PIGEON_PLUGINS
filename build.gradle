@@ -12,13 +12,13 @@ wrapper {
 repositories {
     jcenter()
     maven {
-        url "https://oss.jfrog.org/artifactory/oss-snapshot-local"
+        url  "https://dl.bintray.com/infinite-technology/m2"
     }
 }
 sourceSets {
     main.groovy.srcDirs = ["src"]
 }
 dependencies {
-    compile "io.infinite:pigeon-lib:1.0.0-20190131.090504-30"
+    compile "io.infinite:pigeon-lib:1.0.0-RC2"
     compile "org.codehaus.groovy:groovy-all:2.5.4"
 }
