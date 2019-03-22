@@ -1,10 +1,27 @@
 {
   "inputQueues": [
     {
+      "name": "SELF_TEST_ECHO",
+      "outputQueues": [
+        {
+          "name": "SELF_TEST_ECHO_HTTP",
+          "url": "http://localhost:8089/pigeon/plugins/input/rest/EchoTest?format=yaml",
+          "maxRetryCount": 0,
+          "normalThreadCount": 4,
+          "retryThreadCount": 0,
+          "conversionModuleName": "PASSTHROUGH_POST.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttp",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        }
+      ]
+    },
+    {
       "name": "SMSGLOBAL",
       "outputQueues": [
         {
-          "name": "SMSGLOBAL",
+          "name": "SMSGLOBAL_PROXY",
           "url": "https://api.smsglobal.com/http-api.php",
           "maxRetryCount": 0,
           "normalThreadCount": 4,
@@ -20,7 +37,7 @@
           }
         },
         {
-          "name": "SMSGLOBAL_CLOSED_LOOP",
+          "name": "SMSGLOBAL_MOCK",
           "pollPeriodMilliseconds": 500,
           "url": "http://localhost:8089/pigeon/plugins/input/http/MOCK_SMSGLOBAL_HTTP",
           "maxRetryCount": 0,

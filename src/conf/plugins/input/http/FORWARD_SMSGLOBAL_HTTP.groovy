@@ -1,19 +1,14 @@
 package conf.plugins.input.http
 
-
 import io.infinite.blackbox.BlackBox
 import io.infinite.pigeon.other.MessageStatuses
-import io.infinite.pigeon.springdatarest.InputMessage
-import io.infinite.pigeon.springdatarest.InputMessageRepository
+import io.infinite.pigeon.springdatarest.entities.InputMessage
+import io.infinite.pigeon.springdatarest.repositories.InputMessageRepository
 import io.infinite.supplies.ast.exceptions.ExceptionUtils
 import org.slf4j.LoggerFactory
-import org.slf4j.MDC
 
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
-import java.text.SimpleDateFormat
-
-MDC.put("messageTimestamp", new SimpleDateFormat("yyyy-MM-dd HH-mm-ss-SSS").format(new Date()))
 
 def log = LoggerFactory.getLogger(FORWARD_SMSGLOBAL_HTTP.getClass())
 
@@ -69,7 +64,9 @@ log.info(response)
 return response
 
 String getTemplatePayloadUrl(SmsglobalMessageFormat smsglobalMessageFormat) {
-    return """?action=sendsms&user=${smsglobalMessageFormat.user}&password=${smsglobalMessageFormat.password}&from=${smsglobalMessageFormat.from}&to=${smsglobalMessageFormat.to}&text=${smsglobalMessageFormat.text}"""
+    return """?action=sendsms&user=${smsglobalMessageFormat.user}&password=${smsglobalMessageFormat.password}&from=${
+        smsglobalMessageFormat.from
+    }&to=${smsglobalMessageFormat.to}&text=${smsglobalMessageFormat.text}"""
 }
 
 class SmsglobalMessageFormat {

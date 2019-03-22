@@ -1,16 +1,11 @@
 package conf.plugins.input.http
 
-
 import io.infinite.blackbox.BlackBox
 import io.infinite.supplies.ast.exceptions.ExceptionUtils
 import org.slf4j.LoggerFactory
-import org.slf4j.MDC
 
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
-import java.text.SimpleDateFormat
-
-MDC.put("messageTimestamp", new SimpleDateFormat("yyyy-MM-dd HH-mm-ss-SSS").format(new Date()))
 
 def log = LoggerFactory.getLogger(this.getClass())
 
