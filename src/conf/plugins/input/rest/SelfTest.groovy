@@ -22,9 +22,8 @@ def applyPlugin() {
     InputMessageRepository inputMessageRepository = binding.getVariable("inputMessageRepository") as InputMessageRepository
     CustomResponse customResponse = new CustomResponse()
     def log = LoggerFactory.getLogger(this.getClass())
-    String requestBody = ""
+    String requestBody = binding.getVariable("requestBody")
     try {
-        requestBody = httpServletRequest.getReader().getText()
         log.info("Request:")
         log.info(httpServletRequest.getRequestURI())
         log.info(httpServletRequest.getRequestURL().toString())
