@@ -22,12 +22,10 @@ def applyPlugin() {
     InputMessageRepository inputMessageRepository = binding.getVariable("inputMessageRepository") as InputMessageRepository
     CustomResponse customResponse = new CustomResponse()
     def log = LoggerFactory.getLogger(this.getClass())
-    String requestBody = binding.getVariable("requestBody")
     try {
         log.info("Request:")
         log.info(httpServletRequest.getRequestURI())
         log.info(httpServletRequest.getRequestURL().toString())
-        log.info(requestBody)
         String testPayload = getTestPayload()
         log.info("Test payload: " + testPayload)
         for (headerName in httpServletRequest.getHeaderNames()) {
@@ -45,7 +43,8 @@ def applyPlugin() {
         return new ResponseEntity(customResponse, HttpStatus.OK)
     } catch (Exception e) {
         log.error(e.getMessage(), e)
-        log.error(requestBody)
+        log.info(httpServletRequest.getRequestURI())
+        log.info(httpServletRequest.getRequestURL().toString())
         customResponse.setResponse(new ExceptionUtils().sanitizedStacktrace(e))
         return new ResponseEntity(customResponse, HttpStatus.BAD_REQUEST)
     }

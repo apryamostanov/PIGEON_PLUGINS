@@ -14,14 +14,12 @@ def applyPlugin() {
     HttpServletRequest httpServletRequest = binding.getVariable("httpServletRequest") as HttpServletRequest
     HttpServletResponse httpServletResponse = binding.getVariable("httpServletResponse") as HttpServletResponse
     def log = LoggerFactory.getLogger(this.getClass())
-    String requestBody = ""
     try {
         String externalId = System.currentTimeMillis().toString()
         requestBody = httpServletRequest.getReader().getText()
         log.info("Request:")
         log.info(httpServletRequest.getRequestURI())
         log.info(httpServletRequest.getRequestURL().toString())
-        log.info(requestBody)
         for (headerName in httpServletRequest.getHeaderNames()) {
             log.info(headerName + ":" + httpServletRequest.getHeader(headerName))
         }
@@ -35,7 +33,8 @@ def applyPlugin() {
         return "OK: 0; Sent queued message ID: ${Long.toHexString(Long.valueOf(externalId))} SMSGlobalMsgID:${externalId}"
     } catch (Exception e) {
         log.error(e.getMessage(), e)
-        log.error(requestBody)
+        log.info(httpServletRequest.getRequestURI())
+        log.info(httpServletRequest.getRequestURL().toString())
         return new ExceptionUtils().sanitizedStacktrace(e)
     }
 }
