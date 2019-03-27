@@ -1,4 +1,4 @@
-# PIGEON_PLUGINS
+# Pigeon Plugins
 Collection of open source Pigeon Plugins
 
 This repository contains open source Pigeon Plugins, such as Self Test Plugin and SMSGlobal Plugin.
