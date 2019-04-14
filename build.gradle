@@ -22,3 +22,5 @@ dependencies {
     compile "io.infinite:pigeon-lib:1.0.0-RC3"
     compile "org.codehaus.groovy:groovy-all:2.5.4"
 }
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
