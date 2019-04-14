@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT $JAVA_OPTS -cp "pigeon-lib-1.0.0-RC3.jar" -Dloader.path=lib org.springframework.boot.loader.PropertiesLauncher
