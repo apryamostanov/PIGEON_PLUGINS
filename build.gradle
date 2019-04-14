@@ -19,8 +19,13 @@ sourceSets {
     main.groovy.srcDirs = ["src"]
 }
 dependencies {
-    compile "io.infinite:pigeon-lib:1.0.0-RC5"
+    compile "io.infinite:pigeon-app:1.0.0-RC5"
     compile "org.codehaus.groovy:groovy-all:2.5.4"
 }
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
 task stage(dependsOn: ['build', 'clean'])
+stage.dependsOn(copyToLib)
 build.mustRunAfter clean
