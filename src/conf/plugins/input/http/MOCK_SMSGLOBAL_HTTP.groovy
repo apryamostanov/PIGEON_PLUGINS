@@ -13,10 +13,10 @@ def log = LoggerFactory.getLogger(this.getClass())
 def applyPlugin() {
     HttpServletRequest httpServletRequest = binding.getVariable("httpServletRequest") as HttpServletRequest
     HttpServletResponse httpServletResponse = binding.getVariable("httpServletResponse") as HttpServletResponse
+    String requestBody = binding.getVariable("requestBody")
     def log = LoggerFactory.getLogger(this.getClass())
     try {
         String externalId = System.currentTimeMillis().toString()
-        requestBody = httpServletRequest.getReader().getText()
         log.info("Request:")
         log.info(httpServletRequest.getRequestURI())
         log.info(httpServletRequest.getRequestURL().toString())

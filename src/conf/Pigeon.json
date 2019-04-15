@@ -18,6 +18,20 @@
       ]
     },
     {
+      "name": "URL_TO_SMTP",
+      "outputQueues": [
+        {
+          "name": "URL_TO_SMTP",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/PostToSmtp",
+          "maxRetryCount": 0,
+          "normalThreadCount": 4,
+          "retryThreadCount": 0,
+          "conversionModuleName": "PASSTHROUGH_POST.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps"
+        }
+      ]
+    },
+    {
       "name": "SMSGLOBAL",
       "outputQueues": [
         {
