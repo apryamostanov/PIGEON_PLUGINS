@@ -38,4 +38,5 @@ task copyConf(type: Copy, dependsOn: [jar]) {
 task stage(dependsOn: ['build', 'clean'])
 stage.dependsOn(copyToLib)
 stage.dependsOn(copyApplicationProperties)
+stage.dependsOn(copyConf)
 build.mustRunAfter clean
