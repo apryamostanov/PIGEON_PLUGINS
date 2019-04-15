@@ -27,7 +27,10 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps"
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
         }
       ]
     },
