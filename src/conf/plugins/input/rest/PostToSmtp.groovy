@@ -8,9 +8,12 @@ import org.slf4j.LoggerFactory
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 
+import javax.mail.Message
+import javax.mail.Session
+import javax.mail.Transport
+import javax.mail.internet.InternetAddress
+import javax.mail.internet.MimeMessage
 import javax.servlet.http.HttpServletRequest
-import javax.mail.*
-import javax.mail.internet.*
 
 def log = LoggerFactory.getLogger(this.getClass())
 
