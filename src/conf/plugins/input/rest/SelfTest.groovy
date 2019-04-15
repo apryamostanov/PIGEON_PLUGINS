@@ -61,8 +61,9 @@ return responseEntity
 def getResponseJson(def externalIdOtp) {
     JsonSlurper jsonSlurper = new JsonSlurper()
     return jsonSlurper.parseText("""{
-        "outputMessages": "http://localhost:8089/pigeon/outputMessages/search/searchByInputExternalIdAndSourceName?sourceName=SELF_TEST_PLUGIN&externalId=${externalIdOtp}",
-        "httpLogs": "http://localhost:8089/pigeon/readableHttpLogs?format=yaml&sourceName=SELF_TEST_PLUGIN&externalId=${externalIdOtp}"
+        "gitHub": "https://github.com/INFINITE-TECHNOLOGY/PIGEON_PLUGINS",
+        "outputMessages": "https://pigeon-public.herokuapp.com/pigeon/outputMessages/search/searchByInputExternalIdAndSourceName?sourceName=SELF_TEST_PLUGIN&externalId=${externalIdOtp}",
+        "httpLogs": "https://pigeon-public.herokuapp.com/pigeon/readableHttpLogs?format=yaml&sourceName=SELF_TEST_PLUGIN&externalId=${externalIdOtp}"
     }""")
 }
 

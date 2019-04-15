@@ -5,7 +5,7 @@
       "outputQueues": [
         {
           "name": "SELF_TEST_ECHO_HTTP",
-          "url": "http://localhost:8089/pigeon/plugins/input/rest/EchoTest?format=yaml",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/EchoTest?format=yaml",
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
@@ -39,12 +39,12 @@
         {
           "name": "SMSGLOBAL_MOCK",
           "pollPeriodMilliseconds": 500,
-          "url": "http://localhost:8089/pigeon/plugins/input/http/MOCK_SMSGLOBAL_HTTP",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/http/MOCK_SMSGLOBAL_HTTP",
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "PASSTHROUGH_GET.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttp",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "username": "smsglobaluser",
             "password": "smsglobalpassword"
