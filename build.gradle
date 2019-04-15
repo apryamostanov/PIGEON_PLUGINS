@@ -28,7 +28,7 @@ task copyToLib(type: Copy) {
 }
 task copyApplicationProperties(type: Copy, dependsOn: [jar]) {
     from "src/main/resources/"
-    into "build"
+    into "build/conf"
     include "application.properties"
 }
 task stage(dependsOn: ['build', 'clean'])

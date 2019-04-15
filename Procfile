@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/pigeon-app-1.0.0-RC5.jar
+web: java -Dserver.port=$PORT -Dspring.config.location=buid/conf $JAVA_OPTS -jar build/libs/pigeon-app-1.0.0-RC5.jar
