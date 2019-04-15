@@ -18,7 +18,7 @@
       ]
     },
     {
-      "name": "HTTP_TO_SMTP",
+      "name": "GET_TO_SMTP",
       "outputQueues": [
         {
           "name": "GET_TO_SMTP",
@@ -31,7 +31,12 @@
           "httpProperties": {
             "contentType": "application/json"
           }
-        },
+        }
+      ]
+    },
+    {
+      "name": "POST_TO_SMTP",
+      "outputQueues": [
         {
           "name": "POST_TO_SMTP",
           "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/PostToSmtp",
