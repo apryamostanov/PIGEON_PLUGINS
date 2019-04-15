@@ -49,7 +49,8 @@ def applyPlugin() {
         log.error(e.getMessage(), e)
         log.info(httpServletRequest.getRequestURI())
         log.info(httpServletRequest.getRequestURL().toString())
-        return new ExceptionUtils().sanitizedStacktrace(e)
+        customResponse.setResponse(new ExceptionUtils().sanitizedStacktrace(e))
+        return new ResponseEntity(customResponse, HttpStatus.BAD_REQUEST)
     }
 }
 

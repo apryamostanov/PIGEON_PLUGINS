@@ -18,15 +18,27 @@
       ]
     },
     {
-      "name": "POST_TO_SMTP",
+      "name": "HTTP_TO_SMTP",
       "outputQueues": [
+        {
+          "name": "GET_TO_SMTP",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/PostToSmtp",
+          "maxRetryCount": 0,
+          "normalThreadCount": 4,
+          "retryThreadCount": 0,
+          "conversionModuleName": "GET_TO_POST.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        },
         {
           "name": "POST_TO_SMTP",
           "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/PostToSmtp",
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
-          "conversionModuleName": "GET_TO_POST.groovy",
+          "conversionModuleName": "PASSTHROUGH_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
