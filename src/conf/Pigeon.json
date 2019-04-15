@@ -26,7 +26,7 @@
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
-          "conversionModuleName": "PASSTHROUGH_POST.groovy",
+          "conversionModuleName": "GET_TO_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"

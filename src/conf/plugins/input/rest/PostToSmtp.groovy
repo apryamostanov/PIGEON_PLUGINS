@@ -38,7 +38,7 @@ def applyPlugin() {
         Session session = Session.getDefaultInstance(props)
         session.setDebug(true)
         MimeMessage message = new MimeMessage(session)
-        message.setFrom(parsedJson.from)
+        message.setFrom(parsedJson.from as String)
         message.setRecipient(Message.RecipientType.TO, new InternetAddress(parsedJson.recipient))
         message.setSubject(parsedJson.subject)
         message.setText(parsedJson.text)
