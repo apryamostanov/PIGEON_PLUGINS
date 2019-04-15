@@ -26,6 +26,12 @@ task copyToLib(type: Copy) {
     into "$buildDir/libs"
     from(configurations.compile)
 }
+task copyApplicationProperties(type: Copy, dependsOn: [jar]) {
+    from "src/main/resources/"
+    into "build"
+    include "application.properties"
+}
 task stage(dependsOn: ['build', 'clean'])
 stage.dependsOn(copyToLib)
+stage.dependsOn(copyApplicationProperties)
 build.mustRunAfter clean
