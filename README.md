@@ -1,4 +1,7 @@
 # Pigeon Plugins
+
+![Heroku](https://heroku-badge.herokuapp.com/?app=pigeon-public&root=/pigeon/inputMessages)
+
 Collection of open source Pigeon Plugins
 
 This repository contains open source Pigeon Plugins, such as Self Test Plugin and SMSGlobal Plugin.
