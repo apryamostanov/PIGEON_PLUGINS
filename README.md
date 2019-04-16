@@ -24,3 +24,4 @@ This demo Heroku `pigeon-public` app asynchronously enqueues and sends a email.
 * You can change also subject, text and from <br/>
 * Check `spam` folder in your Gmail account<br/>
 * Navigate through returned URLs to see message status and HTTP logs<br/>
+* First time request may take up to 50 seconds, due to free Heroku dyno unidlying startup.
