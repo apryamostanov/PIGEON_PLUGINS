@@ -15,8 +15,8 @@ Just open the below URL in your browser:
 
 https://pigeon-public.herokuapp.com/pigeon/enqueue?source=browser&endpoint=GET_TO_SMTP&recipient=email@gmail.com&subject=Test123&text=Test1234&from=pigeon@i-t.io
 
-> ❇ Replace `email@gmail.com` with your email (we will not save/share/store/disclose it, it is fully private)
-> ❇ Only Gmail addresses are supported in this demo
-> ❇ You can change also subject, text and from 
-> ❇ Check `spam` folder in your Gmail account
-> ❇ Navigate through returned URLs to see message status and HTTP logs
+> ❇ Replace `email@gmail.com` with your email (we will not save/share/store/disclose it, it is fully private)<br/>
+> ❇ Only Gmail addresses are supported in this demo<br/>
+> ❇ You can change also subject, text and from <br/>
+> ❇ Check `spam` folder in your Gmail account<br/>
+> ❇ Navigate through returned URLs to see message status and HTTP logs<br/>
