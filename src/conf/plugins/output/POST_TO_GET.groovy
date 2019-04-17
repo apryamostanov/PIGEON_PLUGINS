@@ -11,4 +11,4 @@ OutputQueue outputQueue = binding.getVariable("outputQueue") as OutputQueue
 HttpRequest httpRequest = binding.getVariable("httpRequest") as HttpRequest
 
 httpRequest.method = "GET"
-httpRequest.url = httpRequest.url + inputMessage.payload
+httpRequest.url = httpRequest.url + (inputMessage.payload ?: "")
