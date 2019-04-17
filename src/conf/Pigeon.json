@@ -52,6 +52,23 @@
       ]
     },
     {
+      "name": "SELF_TEST_TIMEOUT",
+      "outputQueues": [
+        {
+          "name": "SELF_TEST_TIMEOUT",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
+          "maxRetryCount": 4,
+          "normalThreadCount": 4,
+          "retryThreadCount": 1,
+          "conversionModuleName": "PASSTHROUGH_GET.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        }
+      ]
+    },
+    {
       "name": "SMSGLOBAL",
       "outputQueues": [
         {
