@@ -60,7 +60,7 @@
           "maxRetryCount": 4,
           "normalThreadCount": 4,
           "retryThreadCount": 1,
-          "conversionModuleName": "PASSTHROUGH_GET.groovy",
+          "conversionModuleName": "POST_TO_GET.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
@@ -77,7 +77,7 @@
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
-          "conversionModuleName": "PASSTHROUGH_GET.groovy",
+          "conversionModuleName": "POST_TO_GET.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "username": "smsglobaluser",
@@ -94,7 +94,7 @@
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
-          "conversionModuleName": "PASSTHROUGH_GET.groovy",
+          "conversionModuleName": "POST_TO_GET.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "username": "smsglobaluser",
