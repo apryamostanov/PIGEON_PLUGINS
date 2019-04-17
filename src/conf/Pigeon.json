@@ -41,7 +41,7 @@
         },
         {
           "name": "SELF_TEST_GET_NO_CONNECTION",
-          "url": "https://unknowndomain123z212.com",
+          "url": "https://pigeon-public.herokuapp.com:8000/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
           "retryThreadCount": 1,
@@ -53,7 +53,7 @@
         },
         {
           "name": "SELF_TEST_POST_NO_CONNECTION",
-          "url": "https://unknowndomain123z212.com",
+          "url": "https://pigeon-public.herokuapp.com:8000/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
           "retryThreadCount": 1,
