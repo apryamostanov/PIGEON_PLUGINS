@@ -52,10 +52,10 @@
       ]
     },
     {
-      "name": "SELF_TEST_TIMEOUT",
+      "name": "TIMEOUT",
       "outputQueues": [
         {
-          "name": "SELF_TEST_TIMEOUT",
+          "name": "TIMEOUT",
           "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
