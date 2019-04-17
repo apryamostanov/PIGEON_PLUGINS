@@ -1,7 +1,7 @@
 {
   "inputQueues": [
     {
-      "name": "SELF_TEST_ECHO",
+      "name": "SELF_TEST",
       "outputQueues": [
         {
           "name": "SELF_TEST_ECHO_HTTP",
@@ -9,7 +9,55 @@
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
-          "conversionModuleName": "PASSTHROUGH_POST.groovy",
+          "conversionModuleName": "GET_TO_POST.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        },
+        {
+          "name": "SELF_TEST_GET_TIMEOUT",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
+          "maxRetryCount": 4,
+          "normalThreadCount": 4,
+          "retryThreadCount": 1,
+          "conversionModuleName": "POST_TO_GET.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        },
+        {
+          "name": "SELF_TEST_POST_TIMEOUT",
+          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
+          "maxRetryCount": 4,
+          "normalThreadCount": 4,
+          "retryThreadCount": 1,
+          "conversionModuleName": "GET_TO_POST.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        },
+        {
+          "name": "SELF_TEST_GET_NO_CONNECTION",
+          "url": "https://unknowndomain123z212.com",
+          "maxRetryCount": 4,
+          "normalThreadCount": 4,
+          "retryThreadCount": 1,
+          "conversionModuleName": "POST_TO_GET.groovy",
+          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "httpProperties": {
+            "contentType": "application/json"
+          }
+        },
+        {
+          "name": "SELF_TEST_POST_NO_CONNECTION",
+          "url": "https://unknowndomain123z212.com",
+          "maxRetryCount": 4,
+          "normalThreadCount": 4,
+          "retryThreadCount": 1,
+          "conversionModuleName": "GET_TO_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
@@ -44,23 +92,6 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
-          "httpProperties": {
-            "contentType": "application/json"
-          }
-        }
-      ]
-    },
-    {
-      "name": "TIMEOUT",
-      "outputQueues": [
-        {
-          "name": "TIMEOUT",
-          "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
-          "maxRetryCount": 4,
-          "normalThreadCount": 4,
-          "retryThreadCount": 1,
-          "conversionModuleName": "POST_TO_GET.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"

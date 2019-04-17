@@ -24,7 +24,7 @@ def applyPlugin() {
         log.info(httpServletRequest.getRequestURL().toString())
         log.info(requestBody)
         Thread.sleep(15000)
-        customResponse.setResponse("Replied after waiting 20 seconds")
+        customResponse.setResponse("Replied after waiting 15 seconds")
         return new ResponseEntity(customResponse, HttpStatus.OK)
     } catch (Exception e) {
         log.error(e.getMessage(), e)
