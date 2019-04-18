@@ -16,7 +16,7 @@
           }
         },
         {
-          "name": "SELF_TEST_GET_TIMEOUT",
+          "name": "SELF_TEST_GET_READ_TIMEOUT_NO_RETRY",
           "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
@@ -28,7 +28,7 @@
           }
         },
         {
-          "name": "SELF_TEST_POST_TIMEOUT",
+          "name": "SELF_TEST_POST_READ_TIMEOUT_NO_RETRY",
           "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
@@ -40,11 +40,12 @@
           }
         },
         {
-          "name": "SELF_TEST_GET_NO_CONNECTION",
+          "name": "SELF_TEST_GET_NO_CONNECTION_RETRY",
           "url": "https://pigeon-public.herokuapp.com:8000/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
           "retryThreadCount": 1,
+          "resendIntervalSeconds": 5,
           "conversionModuleName": "POST_TO_GET.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
@@ -52,11 +53,12 @@
           }
         },
         {
-          "name": "SELF_TEST_POST_NO_CONNECTION",
+          "name": "SELF_TEST_POST_NO_CONNECTION_RETRY",
           "url": "https://pigeon-public.herokuapp.com:8000/pigeon/plugins/input/rest/MockTimeout",
           "maxRetryCount": 4,
           "normalThreadCount": 4,
           "retryThreadCount": 1,
+          "resendIntervalSeconds": 5,
           "conversionModuleName": "GET_TO_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {

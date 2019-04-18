@@ -19,7 +19,7 @@ sourceSets {
     main.groovy.srcDirs = ["src"]
 }
 dependencies {
-    compile "io.infinite:pigeon-app:1.0.0-RC13"
+    compile "io.infinite:pigeon-app:1.0.0-RC14"
     compile "org.codehaus.groovy:groovy-all:2.5.4"
     compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
 }
