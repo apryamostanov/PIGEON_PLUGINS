@@ -36,7 +36,7 @@ def applyPlugin() {
         inputMessageOtp.setExternalId(externalIdOtp)
         inputMessageOtp.setSourceName("SELF_TEST_PLUGIN")
         inputMessageOtp.setPayload(testPayload)
-        inputMessageOtp.setInputQueueName("SELF_TEST_ECHO")
+        inputMessageOtp.setInputQueueName("SELF_TEST")
         inputMessageOtp.setStatus(MessageStatuses.NEW.value())
         inputMessageRepository.save(inputMessageOtp)
         customResponse.setResponse(getResponseJson(externalIdOtp))
