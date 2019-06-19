@@ -9,7 +9,7 @@
           "maxRetryCount": 0,
           "normalThreadCount": 4,
           "retryThreadCount": 0,
-          "conversionModuleName": "GET_TO_POST.groovy",
+          "conversionModuleName": "PASSTHROUGH_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
@@ -33,7 +33,7 @@
           "maxRetryCount": 4,
           "normalThreadCount": 4,
           "retryThreadCount": 1,
-          "conversionModuleName": "GET_TO_POST.groovy",
+          "conversionModuleName": "PASSTHROUGH_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
@@ -59,7 +59,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 1,
           "resendIntervalSeconds": 5,
-          "conversionModuleName": "GET_TO_POST.groovy",
+          "conversionModuleName": "PASSTHROUGH_POST.groovy",
           "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
