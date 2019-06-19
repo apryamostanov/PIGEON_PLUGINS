@@ -122,7 +122,6 @@
         },
         {
           "name": "SMSGLOBAL_MOCK",
-          "pollPeriodMilliseconds": 500,
           "url": "https://pigeon-public.herokuapp.com/pigeon/plugins/input/http/MOCK_SMSGLOBAL_HTTP",
           "maxRetryCount": 0,
           "normalThreadCount": 4,
