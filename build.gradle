@@ -3,7 +3,7 @@ plugins {
     id "idea"
 }
 sourceCompatibility = 1.7
-group = "io.infinite"
+group = "io.i-t"
 version = "1.0.0-SNAPSHOT"
 description = "Pigeon plugins"
 wrapper {
@@ -12,14 +12,14 @@ wrapper {
 repositories {
     jcenter()
     maven {
-        url  "https://dl.bintray.com/infinite-technology/m2"
+        url  "https://dl.bintray.com/infinite-technology/io.i-t"
     }
 }
 sourceSets {
     main.groovy.srcDirs = ["src"]
 }
 dependencies {
-    compile "io.infinite:pigeon-app:1.0.0-RC16"
+    compile "io.i-t:pigeon-app:1.0.0-RC18"
     compile "org.codehaus.groovy:groovy-all:2.5.4"
     compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
 }
