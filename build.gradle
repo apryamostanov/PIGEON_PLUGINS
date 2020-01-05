@@ -42,3 +42,9 @@ stage.dependsOn(copyToLib)
 stage.dependsOn(copyApplicationProperties)
 stage.dependsOn(copyConf)
 build.mustRunAfter clean
+
+
+configurations {
+    providedRuntime
+    compile.exclude(group: 'ch.qos.logback')
+}
