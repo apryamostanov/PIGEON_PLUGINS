@@ -3,7 +3,7 @@ package conf.plugins.output
 import io.infinite.blackbox.BlackBox
 import io.infinite.pigeon.springdatarest.entities.InputMessage
 import io.infinite.pigeon.springdatarest.entities.OutputMessage
-import io.infinite.pigeon.http.HttpRequest
+import io.infinite.http.HttpRequest
 import io.infinite.pigeon.conf.OutputQueue
 import org.slf4j.LoggerFactory
 
