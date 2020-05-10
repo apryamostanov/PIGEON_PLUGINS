@@ -1,63 +1,51 @@
 package conf.plugins.input.http
 
-import groovy.sql.Sql
 import io.infinite.blackbox.BlackBox
 import io.infinite.pigeon.springdatarest.entities.InputMessage
 import io.infinite.pigeon.springdatarest.repositories.InputMessageRepository
 import io.infinite.supplies.ast.exceptions.ExceptionUtils
 import org.apache.commons.lang3.time.FastDateFormat
-import org.apache.commons.lang3.time.FastDateParser
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.SpringApplication
-import org.springframework.context.ApplicationContext
-import org.springframework.context.support.ClassPathXmlApplicationContext
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.data.jpa.repository.Query
-import org.springframework.data.repository.query.Param
-import org.springframework.data.rest.core.annotation.RepositoryRestResource
 import org.springframework.stereotype.Component
-import org.springframework.web.context.ContextLoader
 import org.springframework.web.context.WebApplicationContext
 import org.springframework.web.context.support.SpringBeanAutowiringSupport
 import org.springframework.web.context.support.WebApplicationContextUtils
 
+import javax.persistence.EntityManager
 import javax.servlet.ServletContext
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
-import javax.sql.DataSource
 
 def log = LoggerFactory.getLogger(this.getClass())
-
-
-@RepositoryRestResource
-interface CustomInputMessageRepository extends JpaRepository<InputMessage, Long> {
-
-    @Query("""select i from InputMessage i
-        join i.outputMessages o
-        join o.httpLogs h
-        where i.inputQueueName = :inputQueueName
-        and i.insertTime between :dateFrom and :dateTo""")
-    Set<InputMessage> findByDates(
-            @Param("inputQueueName") String inputQueueName,
-            @Param("dateFrom") Date dateFrom,
-            @Param("dateTo") Date dateTo
-    )
-
-}
 
 @Component
 class ReconReport {
 
     @Autowired
-    CustomInputMessageRepository customInputMessageRepository
+    EntityManager entityManager
+
+    List<InputMessage> findByDates(
+            String inputQueueName,
+            Date dateFrom,
+            Date dateTo
+    ) {
+        return entityManager.createQuery("""select i from InputMessage i
+        join i.outputMessages o
+        join o.httpLogs h
+        where i.inputQueueName = :inputQueueName
+        and i.insertTime between :dateFrom and :dateTo""", InputMessage.class)
+                .setParameter("inputQueueName", inputQueueName)
+                .setParameter("dateFrom", dateFrom)
+                .setParameter("dateTo", dateTo)
+                .getResultList()
+    }
 
     String run(ServletContext servletContext, String inputQueueName, Date dateFrom, Date dateTo) {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this)
         WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(servletContext)
         applicationContext.autowireCapableBeanFactory.autowireBean(this)
-
-        return customInputMessageRepository.findByDates(
+        return findByDates(
                 inputQueueName,
                 dateFrom,
                 dateTo
