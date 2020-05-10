@@ -30,8 +30,8 @@ class ReconReport {
     String run(ServletContext servletContext) {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this)
         WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(servletContext)
-        Sql sql = new Sql(dataSource)
         applicationContext.autowireCapableBeanFactory.autowireBean(this)
+        Sql sql = new Sql(dataSource)
         return sql.firstRow("select * from messages").toString()
     }
 }
