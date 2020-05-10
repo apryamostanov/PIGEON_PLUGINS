@@ -61,7 +61,7 @@ class ReconReport {
         ).collect {
             def slurped = jsonSlurper.parseText(content)
             def builder = new JsonBuilder(slurped)
-            builder.content.TransactionNotificationRequest.recon = [
+            builder.TransactionNotificationRequest.recon = [
                     "pigeon_time"                 : fastDateFormat.format(it.insertTime),
                     "wireconnect_url"             : it.url,
                     "pigeon_status"               : it.status,
