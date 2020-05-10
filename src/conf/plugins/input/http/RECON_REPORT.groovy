@@ -59,7 +59,7 @@ class ReconReport {
                 dateFrom,
                 dateTo
         ).collect {
-            def slurped = jsonSlurper.parseText(content)
+            def slurped = jsonSlurper.parseText(it.inputMessage.payload)
             slurped << ["recon": [
                     "pigeon_time"                 : fastDateFormat.format(it.insertTime),
                     "wireconnect_url"             : it.url,
