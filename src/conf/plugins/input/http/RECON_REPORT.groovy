@@ -1,6 +1,7 @@
 package conf.plugins.input.http
 
 import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 import io.infinite.blackbox.BlackBox
 import io.infinite.pigeon.springdatarest.entities.OutputMessage
@@ -54,7 +55,7 @@ class ReconReport {
         JsonSlurper jsonSlurper = new JsonSlurper()
 
         FastDateFormat fastDateFormat = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ss")
-        return findByDates(
+        return "[" + findByDates(
                 outputQueueName,
                 dateFrom,
                 dateTo
@@ -69,7 +70,8 @@ class ReconReport {
                     "wdc_response_HTTP_statuscode": it.httpLogs.first().responseStatus,
                     "wdc_response_body_text"      : it.httpLogs.first().responseBody
             ]]
-        }.join()
+            JsonOutput.toJson(slurped)
+        }.join(",") + "]"
     }
 
 }
