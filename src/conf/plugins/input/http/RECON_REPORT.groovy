@@ -60,8 +60,7 @@ class ReconReport {
                 dateTo
         ).collect {
             def slurped = jsonSlurper.parseText(content)
-            def builder = new JsonBuilder(slurped)
-            builder.TransactionNotificationRequest.recon = [
+            slurped << ["recon": [
                     "pigeon_time"                 : fastDateFormat.format(it.insertTime),
                     "wireconnect_url"             : it.url,
                     "pigeon_status"               : it.status,
@@ -69,7 +68,7 @@ class ReconReport {
                     "wdc_response_time"           : it.httpLogs.first().responseDate,
                     "wdc_response_HTTP_statuscode": it.httpLogs.first().responseStatus,
                     "wdc_response_body_text"      : it.httpLogs.first().responseBody
-            ]
+            ]]
         }.join()
     }
 
