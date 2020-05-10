@@ -55,7 +55,7 @@ class ReconReport {
         JsonSlurper jsonSlurper = new JsonSlurper()
 
         FastDateFormat fastDateFormat = FastDateFormat.getInstance("yyyy-MM-dd'T'HH:mm:ss")
-        return "[" + findByDates(
+        return """{"reconMessages":[""" + findByDates(
                 outputQueueName,
                 dateFrom,
                 dateTo
@@ -71,7 +71,7 @@ class ReconReport {
                     "wdc_response_body_text"      : it.httpLogs.first().responseBody
             ]]
             JsonOutput.toJson(slurped)
-        }.join(",") + "]"
+        }.join(",\n") + "]}"
     }
 
 }
