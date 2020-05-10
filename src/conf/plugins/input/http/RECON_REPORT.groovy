@@ -40,7 +40,7 @@ def applyPlugin() {
         for (headerName in httpServletRequest.getHeaderNames()) {
             log.info(headerName + ":" + httpServletRequest.getHeader(headerName))
         }
-        return reconReport.run()
+        return new ReconReport().run()
     } catch (Exception e) {
         log.error(e.getMessage(), e)
         log.info(httpServletRequest.getRequestURI())
