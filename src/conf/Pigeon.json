@@ -10,7 +10,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -22,7 +22,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 1,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -34,7 +34,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 1,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -47,7 +47,7 @@
           "retryThreadCount": 1,
           "resendIntervalSeconds": 5,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -60,7 +60,7 @@
           "retryThreadCount": 1,
           "resendIntervalSeconds": 5,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -77,7 +77,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "GET_TO_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -94,7 +94,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -111,7 +111,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "PASSTHROUGH_POST.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "contentType": "application/json"
           }
@@ -128,7 +128,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "POST_TO_GET.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "username": "smsglobaluser",
             "password": "smsglobalpassword"
@@ -144,7 +144,7 @@
           "normalThreadCount": 4,
           "retryThreadCount": 0,
           "conversionModuleName": "POST_TO_GET.groovy",
-          "senderClassName": "io.infinite.pigeon.http.SenderDefaultHttps",
+          "senderClassName": "io.infinite.http.SenderDefaultHttps",
           "httpProperties": {
             "username": "smsglobaluser",
             "password": "smsglobalpassword"
