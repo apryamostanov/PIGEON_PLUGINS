@@ -30,7 +30,7 @@ task copyToLib(type: Copy) {
 }
 task copyApplicationProperties(type: Copy, dependsOn: [jar]) {
     from "src/main/resources/"
-    into "build/conf"
+    into "build/conf" 
     include "application.properties"
 }
 task copyConf(type: Copy, dependsOn: [jar]) {
