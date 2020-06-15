@@ -1,2 +1,6 @@
 destinations:
   - name: io.infinite.bobbin.config.ConsoleDestinationConfig
+    levels: [warn, error, info]
+  - name: io.infinite.bobbin.config.ConsoleDestinationConfig
+    levels: [trace, debug]
+    packages: [io.infinite]
