@@ -19,7 +19,7 @@ sourceSets {
     main.groovy.srcDirs = ["src"]
 }
 dependencies {
-    compile "io.i-t:pigeon-app:1.1.1"
+    compile "io.i-t:pigeon-app:1.1.2"
     compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.7.RELEASE'
 }
