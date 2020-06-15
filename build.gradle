@@ -20,7 +20,6 @@ sourceSets {
 }
 dependencies {
     compile "io.i-t:pigeon-app:1.1.0"
-    compile "org.codehaus.groovy:groovy-all:2.5.4"
     compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.1.7.RELEASE'
 }
@@ -30,7 +29,7 @@ task copyToLib(type: Copy) {
 }
 task copyApplicationProperties(type: Copy, dependsOn: [jar]) {
     from "src/main/resources/"
-    into "build/conf" 
+    into "build/conf"
     include "application.properties"
 }
 task copyConf(type: Copy, dependsOn: [jar]) {
