@@ -38,6 +38,7 @@ def applyPlugin() {
         inputMessageOtp.setPayload(testPayload)
         inputMessageOtp.setInputQueueName("SELF_TEST")
         inputMessageOtp.setStatus(MessageStatuses.NEW.value())
+        inputMessageOtp.instanceUUID = null
         inputMessageRepository.save(inputMessageOtp)
         customResponse.setResponse(getResponseJson(externalIdOtp))
         return new ResponseEntity(customResponse, HttpStatus.OK)
